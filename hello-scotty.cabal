@@ -22,5 +22,8 @@ executable hello-scotty
   build-depends:       base >=4.8 && <4.9
                     , scotty
                     , http-types
+                    , aeson
+                    , text
+                    , mtl
   -- hs-source-dirs:
   default-language:    Haskell2010

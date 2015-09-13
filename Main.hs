@@ -1,5 +1,7 @@
 {-# LANGUAGE OverloadedStrings #-}
 
+import Domain
+import Control.Monad.Trans (liftIO)
 import Web.Scotty
 import Data.Maybe
 import Network.HTTP.Types
@@ -33,6 +35,16 @@ main = scotty 3000 $ do
   -- set content type
   get "/json" $ do
     json ("hello world" :: String)  -- you need types for JSON
+
+  -- get article (json)
+  get "/article" $ do
+    json $ Article 1 "caption" "content"
+
+  -- post article (json)
+  post "/article" $ do
+    article <- jsonData :: ActionM Article
+    liftIO $ print article
+    json article
 
   -- named parameters:
   get "/:word" $ do
