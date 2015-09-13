@@ -7,11 +7,11 @@ To run:
 
 To build docker image
 
-`% docker build -t hello-cabal-docker .`
+`% docker build -t hello-scotty .`
 
 To run the application using docker:
 
-`% docker run -i -t -p 3000:3000 hello-cabal-docker ./dist/build/hello-scotty/hello-scotty`
+`% docker run -i -t -p 3000:3000 hello-scotty`
 
 To view the application in the browser:
 
